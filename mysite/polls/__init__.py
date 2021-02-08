@@ -1,0 +1,1 @@
+# báo hiệu đây là một module của Python
