@@ -6,6 +6,3 @@ from django.http import HttpResponse
 # Hàm index hiển thị câu "Hello everyone!"
 def index(request):
     return HttpResponse("Hello everyone!")
-
-def func_1(request):
-    return HttpResponse("<h1>Welcome to DevForU</h1><div>I'm ThinhTPT, a web developer</div>")
