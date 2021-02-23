@@ -6,6 +6,6 @@ from django.http import HttpResponse
 # Hàm index hiển thị câu "Hello everyone!"
 def index(request):
     myname = "Dev For U"
-    items = ["Phone", "Laptop", "Motobike"]
+    items = ["Phone", "Laptop", "Motobike", "Money"]
     context = {"name": myname, "items": items}
     return render(request, "polls/index.html", context)

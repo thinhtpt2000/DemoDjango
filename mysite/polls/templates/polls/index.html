@@ -10,7 +10,9 @@
     <h2>My items include:</h2>
     <ul>
         {% for item in items %}
-            <li> {{ item }}</li>
+            {% if item != 'Laptop' %}
+                <li> {{ item }}</li>
+            {% endif %}
         {% endfor %}
     </ul>
 </body>
