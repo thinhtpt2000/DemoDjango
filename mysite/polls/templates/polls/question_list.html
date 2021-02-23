@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+
+{% block title %} My Question List {% endblock %}
+
+{% block content %}
+    {% if list_question %}
+        <h2>Question list:</h2>
+        <ol>
+            {% for question in list_question %}
+                <li>{{ question.question_text }}</li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <h3 style="color: red;">Question not found!</h3>
+    {% endif %}
+{% endblock %}
