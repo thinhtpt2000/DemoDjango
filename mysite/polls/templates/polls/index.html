@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Polls</title>
-</head>
-<body>
+{% extends 'polls/base.html' %}
+{% block title %} My Polls {% endblock %}
+{% block content %}
     <h1>Here is my template</h1>
     <p>Hello everyone, I'm <b>{{ name }}</b></p>
     <h2>My items include:</h2>
@@ -15,5 +11,4 @@
             {% endif %}
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
