@@ -5,4 +5,7 @@ from django.http import HttpResponse
 # Dùng để viết ra giao diện
 # Hàm index hiển thị câu "Hello everyone!"
 def index(request):
-    return HttpResponse("Hello everyone!")
+    myname = "Dev For U"
+    items = ["Phone", "Laptop", "Motobike"]
+    context = {"name": myname, "items": items}
+    return render(request, "polls/index.html", context)
