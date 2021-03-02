@@ -12,6 +12,6 @@
                 <span style="color: red">{{ c.vote }}</span>
             </p>
         {% endfor %}
-        <a href="{% url 'view_detail' q.id %}">Back to question</a>
+        <a href="{% url 'polls:view_detail' q.id %}">Back to question</a>
     {% endif %}
 {% endblock %}

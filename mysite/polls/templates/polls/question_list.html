@@ -6,7 +6,7 @@
     {% if list_question %}
         <h2>Question list:</h2>
             {% for question in list_question %}
-                <a href="{% url 'view_detail' question.id %}">
+                <a href="{% url 'polls:view_detail' question.id %}">
                     <span>{{ question.question_text }}</span>
                 </a>
                 <br>
