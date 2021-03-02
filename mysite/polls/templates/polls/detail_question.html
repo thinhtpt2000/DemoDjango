@@ -5,11 +5,12 @@
 {% block content %}
     {% if question %}
         <h2>Question: {{ question.question_text }}</h2>
-        <form action="">
+        <form action="{% url 'vote' question.id %}" method="post">
+            {% csrf_token %}
             {% for item in question.choice_set.all %}
                 <input id="choice-{{ item.id }}" type="radio" name="choice" value="{{ item.id }}" />
                 <label for="choice-{{ item.id }}">{{ item.choice_text }}</label>
-                <br/>
+                <br>
             {% endfor %}
             <input type="submit" value="Submit" />
         </form>

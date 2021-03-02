@@ -5,11 +5,12 @@
 {% block content %}
     {% if list_question %}
         <h2>Question list:</h2>
-        <ol>
             {% for question in list_question %}
-                <li>{{ question.question_text }}</li>
+                <a href="{% url 'view_detail' question.id %}">
+                    <span>{{ question.question_text }}</span>
+                </a>
+                <br>
             {% endfor %}
-        </ol>
     {% else %}
         <h3 style="color: red;">Question not found!</h3>
     {% endif %}
