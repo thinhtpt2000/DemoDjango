@@ -1,0 +1,17 @@
+{% extends 'polls/base.html' %}
+
+{% block title %} Result of question {{ question.question_text }} {% endblock %}
+
+{% block content %}
+    {% if q %}
+        <h2>{{ q.question_text }}</h2>
+        <p>Result of the vote:</p>
+        {% for c in q.choice_set.all %}
+            <p>
+                {{ c.choice_text}}:
+                <span style="color: red">{{ c.vote }}</span>
+            </p>
+        {% endfor %}
+        <a href="{% url 'view_detail' q.id %}">Back to question</a>
+    {% endif %}
+{% endblock %}

@@ -20,3 +20,15 @@ def viewDetail(request, question_id):
     q = Question.objects.get(pk=question_id)
     context = {"question": q}
     return  render(request, "polls//detail_question.html", context)
+
+def vote(request, q_id):
+    q = Question.objects.get(pk=q_id)
+    try:
+        c_id = request.POST["choice"]
+        c = q.choice_set.get(pk=c_id)
+        c.vote = c.vote + 1
+        c.save()
+    except:
+        HttpResponse("Choice not found")
+    return render(request, "polls/result.html", {"q": q})
+
